@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Liked spil</title>
+    <link rel="stylesheet" href="css/liked.css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <header>
+      <img src="img/logo.webp" alt="Spilcaféen" width="44" height="44" />
+      <h1><span aria-hidden="true">♥ ♠ ♦ ♣</span> Mine favoritter</h1>
+    </header>
+
+    <main>
+      <section class="kontrol">
+        <input
+          id="soeg"
+          type="search"
+          placeholder="Søg i favoritter…"
+          autocomplete="off"
+        />
+      </section>
+
+      <section id="spil-liste" class="liste">
+        <!-- Hardkodede kort -->
+        <article class="kort" tabindex="0" aria-label="Catan">
+          <img
+            class="miniature"
+            src="https://picsum.photos/seed/catan/640/360"
+            alt="Catan"
+          />
+          <div class="oplysninger">
+            <h3 class="titel">Catan</h3>
+            <p class="genre">Strategi</p>
+            <div class="stjerner">⭐⭐⭐ <small>3.2/5</small></div>
+            <div class="fakta">
+              <span class="faktum">👥 3-4</span>
+              <span class="faktum">⏱ 60-90 min</span>
+            </div>
+          </div>
+          <button class="favorit" aria-label="Favorit (visuelt)">♥</button>
+        </article>
+
+        <article class="kort" tabindex="0" aria-label="Pandemic">
+          <img
+            class="miniature"
+            src="https://picsum.photos/seed/pandemic/640/360"
+            alt="Pandemic"
+          />
+          <div class="oplysninger">
+            <h3 class="titel">Pandemic</h3>
+            <p class="genre">Co-op</p>
+            <div class="stjerner">⭐⭐⭐⭐ <small>4.1/5</small></div>
+            <div class="fakta">
+              <span class="faktum">👥 2-4</span>
+              <span class="faktum">⏱ 45-60 min</span>
+            </div>
+          </div>
+          <button class="favorit aktiv" aria-label="Favorit (visuelt)">
+            ♥
+          </button>
+        </article>
+
+        <article class="kort" tabindex="0" aria-label="Carcassonne">
+          <img
+            class="miniature"
+            src="https://picsum.photos/seed/carcassonne/640/360"
+            alt="Carcassonne"
+          />
+          <div class="oplysninger">
+            <h3 class="titel">Carcassonne</h3>
+            <p class="genre">Familie</p>
+            <div class="stjerner">⭐⭐⭐ <small>3.6/5</small></div>
+            <div class="fakta">
+              <span class="faktum">👥 2-5</span>
+              <span class="faktum">⏱ 30-45 min</span>
+            </div>
+          </div>
+          <button class="favorit" aria-label="Favorit (visuelt)">♥</button>
+        </article>
+      </section>
+    </main>
+
+    <dialog id="spil-boks">
+      <form method="dialog">
+        <button id="luk-spil-boks" aria-label="Luk" type="button">✕</button>
+        <div id="boks-indhold"></div>
+      </form>
+    </dialog>
+
+     <nav class="bundmenu">
+      <a href="#">🏠</a>
+      <a href="liked.html" class="aktiv">❤️</a>
+      <a href="#">❗</a>
+      <a href="#">👤</a>
+      <a href="index.html">🔍</a>
+    </nav>
+
+    <script src="js/liked.js"></script>
+  </body>
+</html>
