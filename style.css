@@ -1,0 +1,401 @@
+/* ========== Reset & variabler ========== */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #f6f6f7;
+  --surface: #ffffff;
+  --text: #222;
+  --muted: #70757a;
+  --line: #e9e9ea;
+  --brand: #b24a3a;
+  --gold: #f5c451;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  --radius: 18px;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========== Topbar ========== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+header img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+header h1 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  font-size: 1.75rem;
+  color: var(--brand);
+}
+header h1 span {
+  margin-right: 0.4rem;
+}
+
+/* ========== Kontrol (forenklet markup) ========== */
+.kontrol {
+  position: sticky;
+  top: 72px;
+  z-index: 90;
+  background: var(--bg);
+  padding: 0.6rem 0.75rem 0.2rem;
+}
+.kontrol > #soeg {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  outline: none;
+  background: var(--surface);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="%2370757a" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 14px center;
+}
+#soeg::placeholder {
+  color: #b7b9bc;
+}
+
+.kontrol .kontrol-raekke {
+  display: flex;
+  gap: 0.8rem;
+  max-width: 1000px;
+  margin: 0.6rem auto 0;
+  align-items: center;
+}
+
+/* “Pill”-look */
+.kontrol label > select,
+#filter-knap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font: 600 1rem/1 system-ui;
+  color: var(--text);
+}
+
+/* Select med chevron */
+.kontrol label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.kontrol label > span {
+  position: absolute;
+  left: 14px;
+  opacity: 0.75;
+  pointer-events: none;
+}
+.kontrol label > select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  padding-left: 78px;
+  padding-right: 28px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M4 7l5 5 5-5" fill="none" stroke="%2370757a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-color: transparent;
+}
+
+/* Filter-knap med ikon */
+#filter-knap {
+  font-weight: 700;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M2 4h14l-5.5 6v4l-3 2v-6L2 4z" fill="%23b24a3a"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 36px;
+}
+
+/* ========== Liste / Kort ========== */
+.liste {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0.75rem 80px;
+  display: grid;
+  gap: 18px;
+}
+.kort {
+  position: relative;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 14px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.kort:hover {
+  transform: translateY(-2px);
+}
+.miniature {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+.data {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 4px;
+}
+.titel {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.45rem;
+}
+.genre {
+  margin: 0;
+  color: var(--muted);
+}
+.stjerner,
+.fakta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.stjerner small {
+  color: var(--muted);
+}
+.stjerne {
+  width: 18px;
+  height: 18px;
+}
+.fakta .info {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #1c1c1c;
+  font-weight: 700;
+}
+.ikon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.9;
+}
+.flag {
+  margin-left: auto;
+  font-size: 20px;
+}
+.favorit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.06);
+  backdrop-filter: saturate(120%);
+  border: 1px solid var(--line);
+}
+.favorit svg {
+  width: 20px;
+  height: 20px;
+}
+.favorit path {
+  fill: #d1d5db;
+}
+.favorit.aktiv path {
+  fill: #e74c3c;
+}
+.ingen-resultater {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem;
+}
+
+/* ========== Spil-dialog ========== */
+#spil-dialog {
+  border: none;
+  border-radius: 20px;
+  max-width: 920px;
+  width: 95%;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  padding: 0;
+}
+#spil-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+#luk-spil-dialog {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  background: #f0f1f3;
+}
+#dialog-indhold {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+#dialog-indhold img {
+  border-radius: 12px;
+}
+.dialog-detaljer h2 {
+  margin: 0.2rem 0 0 0;
+  font-size: 2rem;
+}
+.dialog-detaljer strong {
+  color: var(--brand);
+}
+@media (max-width: 760px) {
+  #dialog-indhold {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== Filter-dialog ========== */
+#filter-boks {
+  border: none;
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  max-width: 480px;
+  width: 92%;
+  padding: 0;
+}
+#filter-boks::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+.filter-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+#luk-dialog {
+  border: none;
+  background: #eee;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.filter-felter {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+.filter-felter label {
+  display: grid;
+  gap: 6px;
+}
+.filter-felter select,
+.filter-felter input[type="range"] {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fafafa;
+}
+.filter-handlinger {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid var(--line);
+}
+.primaer {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1.1rem;
+  cursor: pointer;
+}
+
+/* ========== Footer ========== */
+footer {
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ====== Bundmenu ====== */
+.bundmenu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.9)
+  );
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  z-index: 200;
+}
+.bundmenu a {
+  font-size: 24px;
+  color: #c0c0c0;
+  text-decoration: none;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+.bundmenu a:hover {
+  color: var(--accent, #b24a3a);
+  background: rgba(178, 74, 58, 0.08);
+}
+.bundmenu a.aktiv {
+  color: var(--accent, #b24a3a);
+  background: rgba(178, 74, 58, 0.15);
+  box-shadow: 0 0 8px rgba(178, 74, 58, 0.25);
+}

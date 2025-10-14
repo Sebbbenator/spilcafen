@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spiloversigt</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Topbrand -->
+    <header>
+      <img src="img/logo.webp" alt="Spilcaféen" width="44" height="44" />
+      <h1><span aria-hidden="true">♥ ♠ ♦ ♣</span> Spiloversigt</h1>
+    </header>
+
+    <main>
+      <!-- Søg + kontrolpiller -->
+      <section class="kontrol">
+        <input id="soeg" type="search" placeholder="Søg…" autocomplete="off" />
+
+        <div class="kontrol-raekke">
+          <label>
+            <span>Lokation</span>
+            <select id="lokation" aria-label="Vælg lokation">
+              <option value="">Alle</option>
+              <option value="Vestergade">Vestergade</option>
+              <option value="Fredensgade">Fredensgade</option>
+              <option value="Kolding">Kolding</option>
+              <option value="Aalborg">Aalborg</option>
+            </select>
+          </label>
+
+          <button id="filter-knap" type="button">Filtrering</button>
+        </div>
+      </section>
+
+      <!-- Liste (JS fylder indhold) -->
+      <section id="spil-liste" class="liste"></section>
+    </main>
+
+    <!-- Filtreringsdialog -->
+    <dialog id="filter-boks">
+      <form id="filter-formular" method="dialog">
+        <header class="filter-top">
+          <h2>Filtrering</h2>
+          <button id="luk-boks" aria-label="Luk" type="button">✕</button>
+        </header>
+
+        <section class="filter-felter">
+          <label>
+            <span>Genre</span>
+            <select id="filter-genre">
+              <option value="">Alle</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Sprog</span>
+            <select id="filter-sprog">
+              <option value="">Alle</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Mindst antal spillere</span>
+            <select id="filter-mindstspillere">
+              <option value="">Alle</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+              <option value="5">5+</option>
+              <option value="6">6+</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Mindst vurdering: <output id="rating-ud">0.0</output></span>
+            <input
+              id="filter-mindstrating"
+              type="range"
+              min="0"
+              max="5"
+              step="0.1"
+              value="0"
+            />
+          </label>
+        </section>
+
+        <footer class="filter-handlinger">
+          <button id="nulstil-filtre" type="button">Nulstil</button>
+          <button id="anvend-filtre" class="primaer" value="ok">Anvend</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <!-- Game detaljer dialog -->
+    <dialog id="spil-boks">
+      <form method="dialog">
+        <button id="luk-spil-boks" aria-label="Luk" type="button">✕</button>
+        <div id="boks-indhold"></div>
+      </form>
+    </dialog>
+
+    <footer>
+      <p>© 2025 Spiloversigt</p>
+    </footer>
+
+    <nav class="bundmenu">
+      <a href="#">🏠</a>
+      <a href="#">❤️</a>
+      <a href="#">❗</a>
+      <a href="#">👤</a>
+      <a href="index.html" class="aktiv">🔍</a>
+    </nav>
+
+    <script src="app.js"></script>
+  </body>
+</html>
