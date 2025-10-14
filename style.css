@@ -243,25 +243,27 @@ header h1 span {
   padding: 2rem;
 }
 
-/* ========== Spil-dialog ========== */
-#spil-dialog {
+/* ========== Spil-dialog (mindre / mobilvenlig) ========== */
+#spil-boks {
   border: none;
-  border-radius: 20px;
-  max-width: 920px;
-  width: 95%;
+  border-radius: 14px;
+  max-width: 640px;
+  width: min(92%, 640px);
   background: var(--surface);
   color: var(--text);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   padding: 0;
+  max-height: 90vh;
+  overflow: auto;
 }
-#spil-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
+#spil-boks::backdrop {
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(3px);
 }
-#luk-spil-dialog {
+#luk-spil-boks {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   border: none;
   border-radius: 999px;
   width: 36px;
@@ -269,25 +271,39 @@ header h1 span {
   cursor: pointer;
   background: #f0f1f3;
 }
-#dialog-indhold {
+#boks-indhold {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 20px;
+  gap: 16px;
+  padding: 16px;
 }
-#dialog-indhold img {
+#boks-indhold img {
   border-radius: 12px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
-.dialog-detaljer h2 {
+.boks-detaljer h2 {
   margin: 0.2rem 0 0 0;
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
-.dialog-detaljer strong {
+.boks-detaljer strong {
   color: var(--brand);
 }
-@media (max-width: 760px) {
-  #dialog-indhold {
+@media (max-width: 520px) {
+  #spil-boks {
+    width: calc(100% - 24px);
+    margin: 12px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  }
+  #boks-indhold {
     grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px;
+  }
+  .boks-detaljer h2 {
+    font-size: 1.25rem;
   }
 }
 
