@@ -1,4 +1,4 @@
-/* ========== Reset & variabler ========== */
+/*  Reset & variabler  */
 * {
   box-sizing: border-box;
 }
@@ -26,7 +26,7 @@ img {
   max-width: 100%;
 }
 
-/* ========== Topbar ========== */
+/*  Topbar  */
 header {
   position: sticky;
   top: 0;
@@ -56,7 +56,7 @@ header h1 span {
   margin-right: 0.4rem;
 }
 
-/* ========== Kontrol (forenklet markup) ========== */
+/*  Kontrol */
 .kontrol {
   position: sticky;
   top: 72px;
@@ -139,7 +139,7 @@ header h1 span {
   padding-left: 36px;
 }
 
-/* ========== Liste / Kort ========== */
+/*  Liste / Kort */
 .liste {
   max-width: 1000px;
   margin: 0 auto;
@@ -243,7 +243,7 @@ header h1 span {
   padding: 2rem;
 }
 
-/* ========== Spil-dialog (mindre / mobilvenlig) ========== */
+/* Spil-dialog */
 #spil-boks {
   border: none;
   border-radius: 14px;

@@ -1,4 +1,3 @@
-/* Liked page styles - inspired by main style.css */
 * {
   box-sizing: border-box;
 }
@@ -24,7 +23,7 @@ img {
   display: block;
   max-width: 100%;
 }
-/* Topbar (svarer til index.css topbar) */
+/* Topbar */
 header {
   position: sticky;
   top: 0;
