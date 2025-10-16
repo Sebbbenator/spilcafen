@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Spilcaféen – Hjem</title>
+    <link rel="stylesheet" href="css/hjem.css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- App-ramme der er responsiv (ikke “iPhone frame”) -->
+    <main class="app" aria-label="Spilcaféen mobilside">
+      <header class="topbar">
+        <img src="img/logo.webp" alt="Spilcaféen" width="44" height="44" />
+        <h1><span aria-hidden="true">♥ ♠ ♦ ♣</span> Spilcaféen</h1>
+        <a class="avatar" title="Profil" aria-label="Profil" href="log-in.html"
+          >👤</a
+        >
+      </header>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media">
+          <img src="img/php.png" alt="Power Hungry Pets forside" />
+          <span class="pill">Månedens spil</span>
+          <h1 class="hero-title" id="hero-title">Power Hungry Pets</h1>
+          <button class="cta" id="cta" type="button">Udforsk</button>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="like-title">
+        <h3 id="like-title">Andre synes godt om</h3>
+        <div class="scroller">
+          <article class="game" tabindex="0">
+            <div class="game-card">
+              <img src="img/catan.png" alt="Unstable Unicorns" />
+            </div>
+            <div class="label">Unstable<br />Unicorns</div>
+          </article>
+
+          <article class="game" tabindex="0">
+            <div class="game-card">
+              <img src="img/catan.png" alt="Catan" />
+            </div>
+            <div class="label">Catan</div>
+          </article>
+
+          <article class="game" tabindex="0">
+            <div class="game-card">
+              <img src="img/7wonder.png" alt="7 Wonders" />
+            </div>
+            <div class="label">7 Wonders</div>
+          </article>
+
+          <article class="game" tabindex="0">
+            <div class="game-card">
+              <img src="img/monopoly.png" alt="Monopoly" />
+            </div>
+            <div class="label">Monopoly</div>
+          </article>
+
+          <article class="game" tabindex="0">
+            <div class="game-card">
+              <img src="img/codenames.png" alt="Codenames" />
+            </div>
+            <div class="label">Codenames</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="new-title">
+        <h3 id="new-title">Nye brætspil</h3>
+        <div class="banner" role="img" aria-label="UNO banner">
+          <img src="img/uno.png" alt="UNO" />
+        </div>
+      </section>
+    </main>
+
+    <!-- Fast bundnavigation -->
+    <nav class="bundmenu" aria-label="Primær">
+      <a href="hjem.html" class="aktiv" aria-label="Hjem">🏠</a>
+      <a href="liked.html" aria-label="Likede spil">❤️</a>
+      <a href="#" aria-label="Notifikationer">❗</a>
+      <a href="log-in.html" aria-label="Profil">👤</a>
+      <a href="index.html" aria-label="Søg">🔍</a>
+    </nav>
+
+    
+    <script></script>
+  </body>
+</html>

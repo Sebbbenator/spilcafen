@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/opret.css">
+</head>
+<body>
+    
+     <!-- OPRET BRUGER KORT -->
+  <section class="kort stor" id="kort-opret" aria-labelledby="opret-tekst">
+    <div class="luk" id="luk-opret" title="Luk">✕</div>
+    <div class="avatar" aria-hidden="true">👤</div>
+    <header>
+      <h2 id="opret-tekst">Lav ny profil</h2>
+    </header>
+
+    <div id="form-opret" novalidate>
+      <label><span>Navn</span><input type="text" name="navn" placeholder="Fornavn" required></label>
+      <label><span>Efternavn</span><input type="text" name="efternavn" placeholder="Efternavn" required></label>
+      <label><span>Adresse</span><input type="text" name="adresse" placeholder="Adresse"></label>
+      <label><span>Postnummer</span><input type="text" name="postnr" placeholder="Postnummer"></label>
+      <label><span>Email</span><input type="email" name="email" placeholder="email@eksempel.dk" required></label>
+      <label><span>Brugernavn</span><input type="text" name="nyt-brugernavn" placeholder="brugernavn" required></label>
+      <label><span>Kodeord</span><input type="password" name="nyt-kodeord" placeholder="kodeord" required></label>
+      <label><span>Gentag kodeord</span><input type="password" name="gentag-kodeord" placeholder="gentag kodeord" required></label>
+
+      <button type="submit" class="knap" id="knap-opret">Opret</button>
+    </div>
+  </section>
+</body>
+</html>

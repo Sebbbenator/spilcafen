@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Opret bruger</title>
+    <link rel="stylesheet" href="css/log-in.css" />
+  </head>
+  <body>
+    <main>
+      <!-- LOGIN KORT -->
+      <section class="kort" id="kort-logind" aria-labelledby="logind-tekst">
+        <div class="avatar" aria-hidden="true">👤</div>
+        <header>
+          <h2 id="logind-tekst">Log ind</h2>
+        </header>
+
+        <form id="form-logind" novalidate>
+          <label>
+            <span>Brugernavn</span>
+            <input
+              type="text"
+              id="brugernavn"
+              name="brugernavn"
+              placeholder="brugernavn"
+              required
+            />
+          </label>
+
+          <label>
+            <span>Password</span>
+            <input
+              type="password"
+              id="kodeord"
+              name="kodeord"
+              placeholder="password"
+              required
+            />
+          </label>
+
+          <div class="check-linje">
+            <input type="checkbox" id="husk-mig" />
+            <label for="husk-mig" class="tekst-lille">Husk mig</label>
+          </div>
+
+          <a class="knap" id="knap-logind" href="hjem.html">Log ind</a>
+
+          <div class="kort-footer">
+            <a class="link-tekst" id="link-opret">Opret konto</a>
+            <a class="tekst-lille" id="link-glemt">Glemt adgangskode?</a>
+          </div>
+        </form>
+        <a
+          class="luk"
+          id="luk-login"
+          title="Luk"
+          href="hjem.html"
+          aria-label="Luk"
+          >✕</a
+        >
+      </section>
+    </main>
+  </body>
+</html>
