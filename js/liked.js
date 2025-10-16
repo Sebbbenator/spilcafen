@@ -34,7 +34,7 @@ async function hentOgVisLiked() {
     );
     const all = await res.json();
 
-    // Vælg de første 4 spil som liked (kan ændres senere)
+    // Vælg de første 4 spil som liked 
     const liked = Array.isArray(all) ? all.slice(0, 4) : [];
     visSpil(liked);
   } catch (err) {
